@@ -7,6 +7,7 @@ import styles from '../styles/Home.module.css';
 import { sampleCountState } from '../src/store';
 import NavBar from '../components/NavBar';
 import SimpleInput from '../components/SimpleInput';
+import Input from '../components/common/Input';
 
 const Home: NextPage = () => {
   const [count, setCount] = useRecoilState<number>(sampleCountState);
@@ -30,7 +31,16 @@ const Home: NextPage = () => {
             Click
           </button>
         </p>
-        <SimpleInput/>
+        <Input
+          type="email"
+          label="이메일"
+          placeholder="이메일을 입력해주세요."
+        />
+        <Input
+          type="password"
+          label="비밀번호"
+          placeholder="비밀번호를 입력해주세요."
+        />
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
